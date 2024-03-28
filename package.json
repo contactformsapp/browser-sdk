@@ -1,11 +1,12 @@
 {
   "name": "@contactformsapp/browser-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This Browser Software Development Kit allows you to quickly embed ContactFormsApp into your application through javascript",
   "main": "dist/index.js",
   "scripts": {
     "build:dev": "npx webpack --mode development",
-    "build:prod": "npx webpack --mode production"
+    "build:prod": "npx webpack --mode production",
+    "build:npm": "tsc -b"
   },
   "keywords": [],
   "author": "ContactForms.App <contact@contactforms.app>",
