@@ -12,7 +12,15 @@ interface IngestPayload {
 
 function ingest(config: string) {
   return async (payload: IngestPayload) => {
-    return fetch(config_.getIngestEndpoint(config));
+    return fetch(config_.getIngestEndpoint(config), {
+      method: "POST",
+      body: JSON.stringify(config),
+      headers: {
+        "Content-Type": "application/json",
+        SDK: "Browser",
+      },
+      redirect: "follow",
+    });
   };
 }
 
