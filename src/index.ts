@@ -5,7 +5,7 @@ const config_ = resolveConfiguration();
 interface IngestPayload {
   name: string;
   email: string;
-  additionalInfo: {
+  additionalDetails: {
     [key: string]: string;
   };
 }
@@ -14,7 +14,7 @@ function ingest(config: string) {
   return async (payload: IngestPayload) => {
     return fetch(config_.getIngestEndpoint(config), {
       method: "POST",
-      body: JSON.stringify(config),
+      body: JSON.stringify(payload),
       headers: {
         "Content-Type": "application/json",
         SDK: "Browser",
